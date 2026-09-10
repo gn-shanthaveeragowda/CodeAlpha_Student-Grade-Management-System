@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gradebook | Student Performance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">ACADEMIC OVERVIEW</p>
+                <h1>Student Grade Manager</h1>
+                <p class="subtitle">Track subject scores and understand class performance at a glance.</p>
+            </div>
+            <div class="header-mark" aria-hidden="true">G</div>
+        </header>
+
+        <section class="form-box" aria-labelledby="entry-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">QUICK ENTRY</p>
+                    <h2 id="entry-title">Add a score</h2>
+                </div>
+                <span class="entry-hint">One subject per student</span>
+            </div>
+            <div class="entry-fields">
+                <input type="text" id="studentName" placeholder="Student name">
+                <input type="text" id="studentSubject" placeholder="Subject">
+                <input type="number" id="studentMarks" min="0" max="100" placeholder="Score (0-100)">
+                <button onclick="addStudent()">Save score</button>
+            </div>
+            <p id="formMessage" class="form-message" role="status"></p>
+        </section>
+
+        <section class="summary" aria-labelledby="summary-title">
+            <div class="section-heading summary-heading">
+                <div>
+                    <p class="eyebrow">CLASS SNAPSHOT</p>
+                    <h2 id="summary-title">Summary report</h2>
+                </div>
+            </div>
+            <article class="metric-card students-metric">
+                <span class="metric-label">Students</span>
+                <strong id="studentCount">0</strong>
+                <span class="metric-note">enrolled records</span>
+            </article>
+            <article class="metric-card average-metric">
+                <span class="metric-label">Class average</span>
+                <strong id="average">0.00</strong>
+                <span class="metric-note">across all scores</span>
+            </article>
+            <article class="metric-card highest-metric">
+                <span class="metric-label">Top performer</span>
+                <strong id="highest">—</strong>
+                <span id="highestName" class="metric-note">No scores yet</span>
+            </article>
+            <article class="metric-card lowest-metric">
+                <span class="metric-label">Needs attention</span>
+                <strong id="lowest">—</strong>
+                <span id="lowestName" class="metric-note">No scores yet</span>
+            </article>
+        </section>
+
+        <section class="report-section" aria-labelledby="report-title">
+            <div class="report-toolbar">
+                <div>
+                    <p class="eyebrow">FULL REGISTER</p>
+                    <h2 id="report-title">Student report</h2>
+                </div>
+                <div class="toolbar-actions">
+                    <button class="secondary-button" onclick="exportCsv()">Export CSV</button>
+                    <button class="danger-button" onclick="clearStudents()">Clear all</button>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Subject scores</th>
+                            <th>Average</th>
+                            <th>Grade</th>
+                            <th><span class="sr-only">Actions</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTable"></tbody>
+                </table>
+                <div id="emptyState" class="empty-state">
+                    <strong>No students added yet</strong>
+                    <span>Add the first subject score above to build your report.</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
