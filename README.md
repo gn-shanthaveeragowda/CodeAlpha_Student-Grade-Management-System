@@ -575,6 +575,7 @@ The application does not currently use a database or persistent storage. Data ca
 ## 📸 Screenshots
 
 ![Student Grade Management System](dashboard.png)
+
 ![Student Records](Student_records.png)
 
 
