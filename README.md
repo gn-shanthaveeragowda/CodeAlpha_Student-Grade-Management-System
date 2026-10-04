@@ -324,19 +324,9 @@ student-grade-management-system/
 
 ## ▶️ Running the Application
 
-### Step 1 — Open the Java directory
 
-```bash
-cd java
-```
 
-### Step 2 — Compile the Java files
-
-```bash
-javac *.java
-```
-
-### Step 3 — Start the Java application
+### Step 1 — Start the Java application
 
 ```bash
 java Main
