@@ -183,8 +183,7 @@ public class Main {
         if (fileName.equals("/")) {
             fileName = "/index.html";
         }
-
-        Path filePath = Paths.get(".", fileName.substring(1));
+Path filePath = Paths.get("..", fileName.substring(1)).normalize();
 
         if (!Files.exists(filePath) || Files.isDirectory(filePath)) {
             sendResponse(exchange, 404, "File not found");
